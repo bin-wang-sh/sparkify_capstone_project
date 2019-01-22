@@ -45,7 +45,7 @@ Finally, three classifiers get the following scores:
  - Training: accuracy: 90.24%, Precision: 89.84%, Recall: 90.79%, F1 Score: 90.40%
  - Test:	 accuracy: 90.41%, Precision: 90.38%, Recall: 90.41%, F1 Score: 89.65%
 
-The highest f1 average score model is 89.65%. The best performing model for the first iteration was RandomForestClassifier. Its variance and bias are low while training scores compare with test scores.  So it means RandomForestClassifier generalization on the test dataset performs better than other classifiers. While this is a good first iteration step, there is still a lot of work to do before the model is released into production.
+The highest f1 average score model is 89.65%. The best performing model for the first iteration is RandomForestClassifier. Its variance and bias are low while training scores compare with test scores.  So it means RandomForestClassifier generalization on the test dataset performs better than other classifiers. While this is a good first iteration step, there is still a lot of work to do before the model is released into production.
 
 ## 6. Web link:
    - GitHub: https://github.com/bin-wang-sh/sparkify_capstone_project
