@@ -2,93 +2,59 @@
 
 ## 1. Installation
 I use python 3.5 to create this project and the main libraries I used are:
-- Flask==1.0.2
-- gunicorn==19.9.0
-- matplotlib==3.0.2
-- numpy==1.15.4
-- pandas==0.23.4
-- plotly==3.4.2
-- scikit-learn==0.20.2
+- ibmos2spark==1.0.1
+- matplotlib==2.1.0
+- numpy==1.13.3
+- pandas==0.21.0
+- pyspark==2.3.0
+- seaborn==0.8
 
 Please check requirement.txt for the detailed packages information.
 
 ## 2. Project Motivation
-
-The project  contains a  subset (256MB). I create a spark cluster that consists of one driver and 2 executors as follows:
- ![GUI1](IBM_1.jpg 'Input window')
- on the IBM cloud.  deploys the  your cluster on the IBM cloud. Instructions for setting up your Spark cluster is included in the last lesson of the Extracurricular Spark Course content.
-
-You can follow the steps below to guide your data analysis and model building portion of this project.
-
-
-For this Udacity project I'm looking at the interactions that users have with articles on the IBM Watson Studio platform. I use several recommendations to shows the articles that are most pertinent to a specific user.
-In order to determine which articles to show to each user, I perform a study of the data available on the IBM Watson Studio platform. I use the following recommendations to recommend articles
-- Rank based recommendation
-- User based collaborative filtering recommendation
-- Content based recommendation
-- Matrix Factorization recommendation
-I build out a content based recommendation system using the NLP skills.  And the above recommendations are used in the different situations and they are combined a whole solution. Finally I move the notebook into a web application, and blend codes into a class that can be easily used with a web application.
+The Udacity Capstone project is to predict churn rate.  customer-facing business often  face the challenge of losing customers and need to take actions to keep customers. Predicting churn rates is a common problem that data scientists regularly encounter in lots of customer-facing business.
+Secondly,the ability to efficiently manipulate large datasets with Spark is one of the highest-demand skills in the big data domain. This project improves my spark skills essentially with:
+ - Learn how to create a spark cluster on the cloud platform like IBM, AWS.
+ - How to Manipulate large and realistic datasets with Spark to engineer relevant features for predicting churn.
+ - How to Use Spark MLlib to build machine learning models on big data, far beyond what could be done with non-distributed technologies like scikit-learn.
 
 ## 3. File Descriptions
 
-- Recommandations with IBM\
+- Spark capstone project\
    - README.md
-   - Recommendations_with_IBM.html
-   - Recommendations_with_IBM.ipynb
-   - project_tests.py
-   - user_item_matrix.p
-   - data\
-     - articles_community.csv
-      - user-item-interactions.csv
-   - web_app\
-     -  Procfile
-     -  recommendation
-     -  recommendation_app.py
-     -  rec_app
-     -  requirement.txt
-     - data\
-       -  articles_community.csv
-       -  user-item-interactions.csv
-     - recommendation\
-       -  cbrecommender.py
-       -  data_clean.py
-       -  mfrecommender.py
-       -  rbrecommender.py
-       -  recommendation.py
-       -  recommender.py
-       -  ucfrecommender.py
-    - rec_app\
-       -  run.py
-       -  __init__.py
-       -  templates\
-          -  go.html
-          -  master.html
+   - Sparkify.html
+   - Sparkify.ipynb
+   - requirements.txt
 
 ## 4.Instructions:
 
-     1. Deploy all files under the web_app directory to web application server.
+     1. Create a spark cluster that consists of one driver and 2 executors on the IBM cloud. Its architecture is shown as follows:
+![Spark cluster](cluster-overview.png 'cluster-overview')
+     2. Download the  medium sized dataset that includes sparkify user behavior logs.
 
-     2. The web server run the recommendation by the following steps:
+     3. Create  Sparkify.ipynb to predict churn rate. It following the CRISP-DM process.
+## 5. Result:
+Finally, three classifiers get the following scores:
+- GBTClassifier
+ - Training: accuracy: 95.39%, Precision: 97.02%, Recall: 95.39%, F1 Score: 95.22%
+ - Test:	 accuracy: 84.93%, Precision: 87.40%, Recall: 84.93%, F1 Score: 84.28%
+- LogisticRegression:
+ - Training: accuracy: 80.22%, Precision: 79.28%, Recall: 81.03%, F1 Score: 74.16%
+ - Test:	 accuracy: 79.45%, Precision: 62.67%, Recall: 76.71%, F1 Score: 74.39%
+- RandomForestClassifier
+ - Training: accuracy: 90.24%, Precision: 89.84%, Recall: 90.79%, F1 Score: 90.40%
+ - Test:	 accuracy: 90.41%, Precision: 90.38%, Recall: 90.41%, F1 Score: 89.65%
 
-         -  The web server inovkes recommendation_app.py via Procfile.
-         -  recommendation_app.py invokes rec_app.__init__.py  and listen on 0.0.0.0:3001
-         -  rec_app.__init__.py invokes rec_app.run.py to response web request.
+The highest f1 average score model is 89.65%. The best performing model for the first iteration was RandomForestClassifier. Its variance and bias are low while training scores compare with test scores.  So it means RandomForestClassifier generalization on the test dataset performs better than other classifiers. While this is a good first iteration step, there is still a lot of work to do before the model is released into production.
 
-     3. The web application address is :
+## 6. Web link:
+   - GitHub: https://github.com/bin-wang-sh/sparkify_capstone_project
+   - Blog: https://blog.csdn.net/nettravel_sh/article/details/86602116
 
-     4. The web page will show as follows:
-       - Input Window：
- ![GUI1](IBM_1.jpg 'Input window')
+## 7 Acknowledgement
 
+- Thank you to the @udacity staff for giving me the opportunity to uplevel my Spark skills.
+- Thank Jacob Hansen for his idea about how to find useful page action.
 
-       - Result Window：
-![GUI2](IBM_2.jpg 'Result window')
-
-
-
-
-## 5. GitHub link:
-   - https://github.com/bin-wang-sh/Recommendation_with_IBM_Webapp
-
-## 6. Licensing, Author, Acknowledgements
+## 8. Licensing, Author, Acknowledgements
 This work is licensed under a [Creative Commons  Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/). Please refer to [Udacity Terms of Service](https://www.udacity.com/legal) for further information.
