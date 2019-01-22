@@ -32,7 +32,7 @@ Secondly,the ability to efficiently manipulate large datasets with Spark is one 
 ![Spark cluster](cluster-overview.png 'cluster-overview')
      2. Download the  medium sized dataset that includes sparkify user behavior logs.
 
-     3. Create  Sparkify.ipynb to predict churn rate. It following the CRISP-DM process.
+     3. Create  Sparkify.ipynb to predict churn rate. It follows the CRISP-DM process.
 ## 5. Result:
 Finally, three classifiers get the following scores:
 - GBTClassifier
