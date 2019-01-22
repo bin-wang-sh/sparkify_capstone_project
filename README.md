@@ -22,7 +22,7 @@ Secondly,the ability to efficiently manipulate large datasets with Spark is one 
 
 - Spark capstone project\
    - README.md
-   - Sparkify.html
+   - cluster-overview.png
    - Sparkify.ipynb
    - requirements.txt
 
