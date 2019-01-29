@@ -30,6 +30,7 @@ Secondly,the ability to efficiently manipulate large datasets with Spark is one 
 
      1. Create a spark cluster that consists of one driver and 2 executors on the IBM cloud. Its architecture is shown as follows:
 ![Spark cluster](cluster-overview.png 'cluster-overview')
+
      2. Download the  medium sized dataset that includes sparkify user behavior logs.
 
      3. Create  Sparkify.ipynb to predict churn rate. It follows the CRISP-DM process.
