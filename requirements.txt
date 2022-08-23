@@ -111,7 +111,7 @@ mpld3==0.3
 mpmath==0.19
 msgpack-python==0.4.8
 multipledispatch==0.4.9
-nbconvert==5.3.1
+nbconvert==6.5.1
 nbformat==4.4.0
 netaddr==0.7.19
 netifaces==0.10.6
